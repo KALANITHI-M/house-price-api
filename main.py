@@ -32,17 +32,18 @@ def gradio_predict(medInc, houseAge, aveRooms, aveBedrms,
 demo = gr.Interface(
     fn=gradio_predict,
     inputs=[
-        gr.Number(label="MedInc"),
-        gr.Number(label="HouseAge"),
-        gr.Number(label="AveRooms"),
-        gr.Number(label="AveBedrms"),
-        gr.Number(label="Population"),
-        gr.Number(label="AveOccup"),
-        gr.Number(label="Latitude"),
-        gr.Number(label="Longitude"),
+        gr.Number(value=8.3252, label="MedInc"),
+        gr.Number(value=41.0,   label="HouseAge"),
+        gr.Number(value=6.98,   label="AveRooms"),
+        gr.Number(value=1.02,   label="AveBedrms"),
+        gr.Number(value=322.0,  label="Population"),
+        gr.Number(value=2.55,   label="AveOccup"),
+        gr.Number(value=37.88,  label="Latitude"),
+        gr.Number(value=-122.23,label="Longitude"),
     ],
     outputs=gr.Number(label="Predicted Price"),
     title="House Price Predictor",
+    submit_btn="Predict",   # optional: change button text from "Flag" to "Predict"
 )
 
 # Mount Gradio at /ui

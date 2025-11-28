@@ -4,3 +4,4 @@ gradio
 joblib
 scikit-learn
 pydantic
+plotly
